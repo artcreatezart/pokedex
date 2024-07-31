@@ -89,46 +89,50 @@ const Home = () => {
 
   return (
     <div id='homepage'>
-      <div id='searchContainer'>
-        <label htmlFor="search">Search</label>
-        <input 
-        type='text' 
-        name='search'
-        id='search'
-        value={searchTerm}
-        onChange={(event) => setSearchTerm(event.target.value)}
-        />
+      <h1>Pokedex</h1>
+      <div id='filterContainer'>
+        <div id='searchContainer'>
+          <label htmlFor="search">Search</label>
+          <input 
+          type='text' 
+          name='search'
+          id='search'
+          value={searchTerm}
+          onChange={(event) => setSearchTerm(event.target.value)}
+          />
 
+        </div>
+        <div id='typeContainer'>
+          <label htmlFor='type'>Type</label>
+          <select
+            name='type'
+            id='type'
+            value={type}
+            onChange={(event) => setType(event.target.value)}
+          >
+            <option value=''>Choose Type...</option>
+            <option value='normal'>normal</option>
+            <option value='fire'>fire</option>
+            <option value='water'>water</option>
+            <option value='grass'>grass</option>
+            <option value='electric'>electric</option>
+            <option value='ice'>ice</option>
+            <option value='fighting'>fighting</option>
+            <option value='poison'>poison</option>
+            <option value='ground'>ground</option>
+            <option value='flying'>flying</option>
+            <option value='psychic'>psychic</option>
+            <option value='bug'>bug</option>
+            <option value='rock'>rock</option>
+            <option value='ghost'>ghost</option>
+            <option value='dragon'>dragon</option>
+            <option value='dark'>dark</option>
+            <option value='steel'>steel</option>
+            <option value='fairy'>fairy</option>
+          </select>
+        </div>
       </div>
-      <div id='type-container'>
-        <label htmlFor='type'>Type</label>
-        <select
-          name='type'
-          id='type'
-          value={type}
-          onChange={(event) => setType(event.target.value)}
-        >
-          <option value=''>Choose Type...</option>
-          <option value='normal'>normal</option>
-          <option value='fire'>fire</option>
-          <option value='water'>water</option>
-          <option value='grass'>grass</option>
-          <option value='electric'>electric</option>
-          <option value='ice'>ice</option>
-          <option value='fighting'>fighting</option>
-          <option value='poison'>poison</option>
-          <option value='ground'>ground</option>
-          <option value='flying'>flying</option>
-          <option value='psychic'>psychic</option>
-          <option value='bug'>bug</option>
-          <option value='rock'>rock</option>
-          <option value='ghost'>ghost</option>
-          <option value='dragon'>dragon</option>
-          <option value='dark'>dark</option>
-          <option value='steel'>steel</option>
-          <option value='fairy'>fairy</option>
-        </select>
-      </div>
+      
       <div id='pokemonDisplayGrid'>
         {loading ? (
           <Puff color='#1f1f1f' height={100} width={100}/>
@@ -136,16 +140,27 @@ const Home = () => {
           filteredPokemon.map((item, index) => (
             <div
             key= {index}
-            id='pokemon-card'
+            id='pokemonCard'
             onClick={() => {
               item.onSelect()
               navigate('/pokemon/')
             }}
             >
               <img src={item.imageURL} alt={item.name}/>
-              <p id='pokeID'>{item.id}</p>
-              <p>{item.name}</p>
-              <p>{item.types.join(", ")}</p>
+              <div id='otherPokeInfo'>
+                <p id='pokeID'>{item.id}</p>
+                <div id='nameType'>
+                  <p id='pokeName'>{item.name}</p>
+                  <p id='pokeTypes'>{item.types.join(", ")}</p>
+                </div>
+                
+              </div>
+              <button id="readMorePoke" onClick={() => {
+              item.onSelect()
+              navigate('/pokemon/')
+            }}>See More</button>
+              
+              
             </div>
           ))
         )}
