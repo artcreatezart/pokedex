@@ -22,7 +22,7 @@ const Home = () => {
   // initalise navigate
   const navigate = useNavigate()
 
-  const fetchPokemon = async () => {
+  const fetchPokemon = async() => {
     setLoading(true);
     try {
      const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=151`)  
@@ -34,7 +34,7 @@ const Home = () => {
         pokemonData.map(async (pokemon) => {
           const pokemonResponse = await axios.get(pokemon.url)
           const type = pokemonResponse.data.types.map((typeData) => typeData.type.name)
-          const ability = pokemonResponse.data.abilites.map((abilityData) => abilityData.ability.name)
+          const ability = pokemonResponse.data.abilities.map((abilityData) => abilityData.ability.name)
           const id = pokemonResponse.data.id
           return {
             id: id,
