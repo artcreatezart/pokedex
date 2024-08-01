@@ -4,7 +4,7 @@ import { PokeContext } from "../context/PokeContext"
 import { useNavigate } from "react-router-dom" 
 import { Puff } from "react-loader-spinner"
 
-const typeColors = {
+const typeImg = {
   normal: '#B8B08D',
   fire: '#EACFB7',
   water: '#A0C1D1',
@@ -161,7 +161,6 @@ const Home = () => {
             <div
             key= {index}
             id='pokemonCard'
-            style={{backgroundColor: typeColors[item.types[0].toLowerCase()]}}
             onClick={() => {
               item.onSelect()
               navigate('/pokemon/')
@@ -172,7 +171,14 @@ const Home = () => {
                 <p id='pokeID'>{item.id}</p>
                 <div id='nameType'>
                   <p id='pokeName'>{item.name}</p>
-                  <p id='pokeTypes'>{item.types.join(", ")}</p>
+                  <div id='pokemonTypeContainer'>
+                    <div id='individualTypeBox'><div id='typeBox' style={{backgroundColor: typeImg[item.types[0].toLowerCase()]}}>
+                      
+                    </div>
+                    <p id='pokeTypes'>{item.types.join(", ")}</p></div>
+                    
+                  </div>
+                  
                 </div>
                 
               </div>

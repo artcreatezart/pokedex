@@ -1,8 +1,7 @@
 import {useContext} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { PokeContext } from '../context/PokeContext'
- 
-const typeColors = {
+const typeImg = {
   normal: '#B8B08D',
   fire: '#EACFB7',
   water: '#A0C1D1',
@@ -31,15 +30,36 @@ const SinglePokemon = () => {
  
  
   return (
-    <div style={{backgroundColor: typeColors[selectedPokemon.types[0].toLowerCase()]}}>
-      <h2>{selectedPokemon.name.toUpperCase()}</h2>
-      <button onClick={() => navigate(-1)}>Go back</button>
-      <p>{selectedPokemon.id}</p>
-      <img src={selectedPokemon.imageURL} alt={selectedPokemon.name + "image"}/>
-      <p>Type: {selectedPokemon.types.join(", ")}</p>
-      <p>Ability: {selectedPokemon.ability.join(", ")}</p>
-      <p>Height: {selectedPokemon.height}</p>
-      <p>Weight: {selectedPokemon.weight}</p>
+    <div id='singlePokemonPage'>
+      <div id='singlePokemonButtonContainer'>
+        <button onClick={() => navigate(-1)}>Go back</button>
+        <button>Next</button>
+      </div>
+      
+      <div id='singlePokemonContainer'>
+        <img src={selectedPokemon.imageURL} alt={selectedPokemon.name + "image"}/>
+        <div id='singlePokemonInfo'>
+          <div id='singlePokemonName'>
+            <p>No. {selectedPokemon.id}</p>
+            <h2>{selectedPokemon.name.toUpperCase()}</h2>
+            <button>Listen</button>
+          </div>
+          <div id='singlePokemonTypes'>
+            <div id='individualTypeBox'>
+              <div id='individualColourTypeBox' style={{backgroundColor: typeImg[selectedPokemon.types[0].toLowerCase()]}}>
+
+              </div>
+              <p>{selectedPokemon.types.join(", ")}</p>
+            </div>
+            
+          </div>
+          <p>Ability: {selectedPokemon.ability.join(", ")}</p>
+          <p>Height: {selectedPokemon.height}</p>
+          <p>Weight: {selectedPokemon.weight}</p>
+        </div>
+        
+      </div>
+      
     </div>
   )
 }
