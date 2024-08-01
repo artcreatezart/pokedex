@@ -41,7 +41,6 @@ const SinglePokemon = () => {
     <div id='singlePokemonPage'>
       <div id='singlePokemonButtonContainer'>
         <button onClick={() => navigate(-1)}>Go back</button>
-        <button>Next</button>
       </div>
       
       <div id='singlePokemonContainer'>
@@ -50,7 +49,7 @@ const SinglePokemon = () => {
           <div id='singlePokemonName'>
             <p>No. {selectedPokemon.id}</p>
             <h2>{selectedPokemon.name.toUpperCase()}</h2>
-            <button onClick={handlePlay}>Listen</button>
+            <button onClick={handlePlay}>Battle Cry</button>
             <audio ref={audioRef} src={selectedPokemon.cry} />
           </div>
           <div id='singlePokemonTypes'>

@@ -65,6 +65,7 @@ const Home = () => {
           height: pokemonResponse.data.height,
           weight: pokemonResponse.data.weight,
           cry: pokemonResponse.data.cries.latest // add the cry
+          
         }
       })
     )
