@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer>
-      Footer
+      Background Photo Credit: Pokemon Arceus Nitendo Game
     </footer>
   )
 }

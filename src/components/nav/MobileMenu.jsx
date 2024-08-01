@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { X } from "react-bootstrap-icons"
 
+
 const MobileMenu = ({closeMethod}) => {
   return (
     <>

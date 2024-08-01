@@ -110,7 +110,7 @@ const Home = () => {
 
   return (
     <div id='homepage'>
-      <h1>Pokedex</h1>
+      <h1>Hisui Pokedex</h1>
       <div id='filterContainer'>
         <div id='searchContainer'>
           <label htmlFor="search">Search</label>
@@ -179,6 +179,10 @@ const Home = () => {
                     <p id='pokeTypes'>{item.types.join(", ")}</p>
                     
                   </div>
+                  <button id="readMorePokeMobile" onClick={() => {
+              item.onSelect()
+              navigate('/pokemon/')
+            }}>See More</button>
                   
                 </div>
                 

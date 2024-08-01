@@ -1,6 +1,7 @@
 import { useContext, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { PokeContext } from '../context/PokeContext'
+import { Rulers } from "react-bootstrap-icons";
 
 const typeImg = {
   normal: '#7A7A7A',
@@ -52,19 +53,36 @@ const SinglePokemon = () => {
             <button onClick={handlePlay}>Battle Cry</button>
             <audio ref={audioRef} src={selectedPokemon.cry} />
           </div>
-          <div id='singlePokemonTypes'>
-            <div id='individualTypeBox'>
-              <div id='individualColourTypeBox' style={{backgroundColor: typeImg[selectedPokemon.types[0].toLowerCase()]}}>
+          <div id='singlePokemonMoreInfo'>
+            <div id='singlePokemonTypes'>
+              <div id='individualTypeBox'>
+                <div id='individualColourTypeBox' style={{backgroundColor: typeImg[selectedPokemon.types[0].toLowerCase()]}}>
 
+                </div>
+                <p>{selectedPokemon.types.join(", ")}</p>
               </div>
-              <p>{selectedPokemon.types.join(", ")}</p>
+
+              
+              
             </div>
+
+            <div id='pokeMeasure'>
+                <div id='heightMeasure'>
+                  <Rulers />
+                  <p>Height: {selectedPokemon.height}</p>
+                </div>
+                <div id='weightMeasure'>
+                  <Rulers/>
+                  <p>Weight: {selectedPokemon.weight}</p>
+                </div>
+              </div>
+            
             
           </div>
-          <p>Ability: {selectedPokemon.ability.join(", ")}</p>
-          <p>Height: {selectedPokemon.height}</p>
-          <p>Weight: {selectedPokemon.weight}</p>
-        </div>
+          <p id='abilityInfo'>Ability: {selectedPokemon.ability.join(", ")}</p>
+
+          </div>
+          
         
       </div>
       
