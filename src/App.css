@@ -161,6 +161,7 @@ body.no-scroll {
     #pokemonDisplayGrid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         grid-row: auto;
         max-width: 100%;
         padding: 15px;
@@ -188,7 +189,7 @@ body.no-scroll {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                gap: 20px;
+                gap: 30px;
 
                 #pokeID {
                     font-size: 2em;
@@ -203,13 +204,17 @@ body.no-scroll {
                         font-weight: 700;
                         color: rgba(247, 222, 201, 0.894);
                         transition: ease 0.5s;
+                        margin-bottom: 10px;
                     }
 
                     #pokemonTypeContainer {
                         display: flex;
-                        width: 200px;
+                        width: 250px;
                         background-color: rgba(19, 18, 27, 0.6);
                         border: 3px rgb(19, 18, 27) solid;
+                        transition: ease 0.5s;
+                        padding: 10px;
+                        gap: 10px;
 
                         #typeBox {
                             width: 20px;
@@ -220,6 +225,7 @@ body.no-scroll {
                             font-size: 1.3em;
                             color: rgba(247, 222, 201, 0.691);
                             transition: ease 0.5s;
+                            text-transform: uppercase;
                         }
                     }
 
@@ -238,10 +244,12 @@ body.no-scroll {
                 border-radius: 3px;
                 color: #d6c2a7;
                 margin-top: 10px;
+                transition: ease 0.5s;
             }
 
             #readMorePoke:hover {
                 background-color: rgba(4, 4, 20, 1);
+                transition: ease 0.5s;
             }
         }
 
@@ -264,6 +272,7 @@ body.no-scroll {
 
                     #pokemonTypeContainer {
                         background-color: rgba(247, 222, 201, 0.5);
+                        transition: ease 0.5s;
 
                         #pokeTypes {
                             color: rgb(19, 18, 27);
@@ -360,9 +369,7 @@ footer {
     padding: 30px;
     background-color: #1f1f1f;
     color: white;
-    position: absolute;
     width: 100%;
-    bottom: 0;
 }
 
 /* Footer styling end */

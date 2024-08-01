@@ -5,24 +5,24 @@ import { useNavigate } from "react-router-dom"
 import { Puff } from "react-loader-spinner"
 
 const typeImg = {
-  normal: '#B8B08D',
-  fire: '#EACFB7',
-  water: '#A0C1D1',
-  grass: '#9EBF8F',
-  electric: '#F2E77A',
+  normal: '#7A7A7A',
+  fire: '#FF8C42',
+  water: '#34A5D5',
+  grass: '#52A937',
+  electric: '#E9D820',
   ice: '#A1D2D0',
-  fighting: '#B63D3A',
-  poison: '#B06DAB',
-  ground: '#D6C689',
-  flying: '#B69FEC',
-  psychic: '#E2868B',
-  bug: '#A7BD5B',
-  rock: '#BDAF6E',
-  ghost: '#8D7B9C',
-  dragon: '#8574F8',
-  dark: '#8D7B6F',
-  steel: '#B9B9CC',
-  fairy: '#E3AFC3',
+  fighting: '#49ABA2',
+  poison: '#7025BB',
+  ground: '#C06F35',
+  flying: '#99CBD6',
+  psychic: '#DA4469',
+  bug: '#3E673C',
+  rock: '#AEA898',
+  ghost: '#44304B',
+  dragon: '##003D5B',
+  dark: '#24292E',
+  steel: '#7AB4B8',
+  fairy: '#E090C1',
 };
 
 // Fetch Pokemon Fucntion
@@ -51,23 +51,23 @@ const Home = () => {
 
      //   Get the detailed data using the Pokemon.url
      const detailedPokemonData = await Promise.all(
-        pokemonData.map(async (pokemon) => {
-          const pokemonResponse = await axios.get(pokemon.url)
-          const type = pokemonResponse.data.types.map((typeData) => typeData.type.name)
-          const ability = pokemonResponse.data.abilities.map((abilityData) => abilityData.ability.name)
-          const id = pokemonResponse.data.id
-          return {
-            id: id,
-            name: pokemon.name,
-            imageURL: pokemonResponse.data.sprites.other['official-artwork'].front_default,
-            ability: ability,
-            types: type,
-            height: pokemonResponse.data.height,
-            weight: pokemonResponse.data.weight
-
-          }
-        })
-     )
+      pokemonData.map(async (pokemon) => {
+        const pokemonResponse = await axios.get(pokemon.url)
+        const type = pokemonResponse.data.types.map((typeData) => typeData.type.name)
+        const ability = pokemonResponse.data.abilities.map((abilityData) => abilityData.ability.name)
+        const id = pokemonResponse.data.id
+        return {
+          id: id,
+          name: pokemon.name,
+          imageURL: pokemonResponse.data.sprites.other['official-artwork'].front_default,
+          ability: ability,
+          types: type,
+          height: pokemonResponse.data.height,
+          weight: pokemonResponse.data.weight,
+          cry: pokemonResponse.data.cries.latest // add the cry
+        }
+      })
+    )
 
     //  add onSelect to eachPokemonn
     // onSelect set the context equal to that selected pokemon
@@ -172,10 +172,10 @@ const Home = () => {
                 <div id='nameType'>
                   <p id='pokeName'>{item.name}</p>
                   <div id='pokemonTypeContainer'>
-                    <div id='individualTypeBox'><div id='typeBox' style={{backgroundColor: typeImg[item.types[0].toLowerCase()]}}>
+                    <div id='typeBox' style={{backgroundColor: typeImg[item.types[0].toLowerCase()]}}/>
                       
-                    </div>
-                    <p id='pokeTypes'>{item.types.join(", ")}</p></div>
+                    
+                    <p id='pokeTypes'>{item.types.join(", ")}</p>
                     
                   </div>
                   
