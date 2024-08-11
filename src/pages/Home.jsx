@@ -4,6 +4,7 @@ import { PokeContext } from "../context/PokeContext"
 import { useNavigate } from "react-router-dom" 
 import { Puff } from "react-loader-spinner"
 
+
 const typeImg = {
   normal: '#7A7A7A',
   fire: '#FF8C42',
@@ -41,6 +42,11 @@ const Home = () => {
   const [pokedex, setPokedex] = useState([])
   // initalise navigate
   const navigate = useNavigate()
+
+  const resetFilters = () => {
+    setType('');
+    setSearchTerm('')
+  }
 
   const fetchPokemon = async() => {
     setLoading(true);
@@ -152,6 +158,7 @@ const Home = () => {
             <option value='fairy'>fairy</option>
           </select>
         </div>
+        <button className='primary-button' onClick={resetFilters}>Reset Filters</button>
       </div>
       
       <div id='pokemonDisplayGrid'>
@@ -179,10 +186,10 @@ const Home = () => {
                     <p id='pokeTypes'>{item.types.join(", ")}</p>
                     
                   </div>
-                  <button id="readMorePokeMobile" onClick={() => {
+                  {/* <button id="readMorePokeMobile" onClick={() => {
               item.onSelect()
               navigate('/pokemon/')
-            }}>See More</button>
+            }}>See More</button> */}
                   
                 </div>
                 
