@@ -30,19 +30,8 @@ body.no-scroll {
     display: flex;
     align-items: space-between;
     text-align: right;
-    padding: 10px;
+    padding: 15px;
     background-color: rgba(11, 11, 16, 0.8);
-    /* position: fixed; */
-
-    a {
-        color: white;
-        text-decoration: none;
-        margin-left: 20px;
-        font-size: 18px;
-        margin-top: 5px;
-        display: inline-block;
-        font-size: 1.8em;
-    }
 
     #logo,
     #menu {
@@ -62,8 +51,7 @@ body.no-scroll {
     #logo {
         width: 25%;
         font-weight: 600;
-        font-size: 28px;
-        margin-right: 30px;
+        font-size: 21px;
         text-align: left;
     }
 
@@ -83,9 +71,10 @@ body.no-scroll {
 
             #hamburgerIcon {
                 color: white;
-                font-size: 33px;
+                font-size: 40px;
                 position: relative;
                 top: 2px;
+                margin: 5px 30px 0 0;
             }
         }
 
@@ -94,6 +83,17 @@ body.no-scroll {
         }
 
     }
+}
+
+#topnav a {
+
+    color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 18px;
+        margin-top: 5px;
+        display: inline-block;
+        font-size: 1.8em;
 }
 
 .primary-button {
@@ -171,6 +171,7 @@ body.no-scroll {
     #filterContainer {
         width: 100%;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         /* flex-direction: column; */
@@ -235,6 +236,7 @@ body.no-scroll {
                 justify-content: center;
                 align-items: center;
                 gap: 20px;
+                width: 100%;
 
                 #pokeID {
                     font-size: 1.7em;
@@ -249,6 +251,7 @@ body.no-scroll {
                 #nameType {
                     display: flex;
                     flex-direction: column;
+                    width: 100%;
 
                     #pokeName {
                         font-size: 1.8em;
@@ -258,6 +261,7 @@ body.no-scroll {
                         font-family: "IBM Plex Mono", monospace;
                         font-weight: 400;
                         font-style: normal;
+                        margin-bottom: 15px;
 
                     }
 
@@ -269,6 +273,9 @@ body.no-scroll {
                         transition: ease 0.5s;
                         padding: 10px;
                         gap: 10px;
+                        align-items: center;
+                        width: 100%;
+
 
                         #typeBox {
                             width: 20px;
@@ -344,6 +351,7 @@ body.no-scroll {
                     #pokemonTypeContainer {
                         background-color: rgba(247, 222, 201, 0.5);
                         transition: ease 0.5s;
+                        align-items: center;
 
                         #pokeTypes {
                             color: rgb(19, 18, 27);
@@ -547,6 +555,10 @@ body.no-scroll {
     }
 }
 
+.name-id-container {
+    display: flex;
+    gap: 2rem;
+}
 
 
 

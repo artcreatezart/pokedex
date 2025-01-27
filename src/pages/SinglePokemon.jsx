@@ -18,7 +18,7 @@ const typeImg = {
   bug: '#3E673C',
   rock: '#AEA898',
   ghost: '#44304B',
-  dragon: '##003D5B',
+  dragon: '#003D5B',
   dark: '#24292E',
   steel: '#7AB4B8',
   fairy: '#E090C1',
@@ -45,7 +45,14 @@ const SinglePokemon = () => {
       </div>
       
       <div id='singlePokemonContainer'>
-        <img src={selectedPokemon.imageURL} alt={selectedPokemon.name + "image"}/>
+      <img 
+        src={selectedPokemon?.imageURL || "/img/UnownQuestion.png"} // Provide fallback image URL
+        alt={selectedPokemon?.name + " image"} 
+      />
+
+      {/* Conditionally render the error message if imageURL is missing */}
+      {!selectedPokemon?.imageURL && <p>Can't Find Image</p>}
+
         <div id='singlePokemonInfo'>
           <div id='singlePokemonName'>
             <p>No. {selectedPokemon.id}</p>
@@ -62,23 +69,23 @@ const SinglePokemon = () => {
                 <p>{selectedPokemon.types.join(", ")}</p>
               </div>
 
-              
-              
+
             </div>
 
             <div id='pokeMeasure'>
-                <div id='heightMeasure'>
-                  <Rulers />
-                  <p>Height: {selectedPokemon.height}</p>
-                </div>
-                <div id='weightMeasure'>
-                  <Rulers/>
-                  <p>Weight: {selectedPokemon.weight}</p>
-                </div>
+              <div id='heightMeasure'>
+                <Rulers />
+                <p>Height: {selectedPokemon.height}</p>
               </div>
+              <div id='weightMeasure'>
+                <Rulers/>
+                <p>Weight: {selectedPokemon.weight}</p>
+              </div>
+            </div>
             
             
           </div>
+
           <p id='abilityInfo'>Ability: {selectedPokemon.ability.join(", ")}</p>
 
           </div>

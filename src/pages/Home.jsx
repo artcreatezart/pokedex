@@ -113,7 +113,11 @@ const Home = () => {
     setFilteredPokemon(filteredData)
   }, [searchTerm, type])
 
-
+  useEffect(() => {
+    // Scroll to top when this page is loaded
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div id='homepage'>
       <h1>Hisui Pokedex</h1>
@@ -174,11 +178,21 @@ const Home = () => {
               navigate('/pokemon/')
             }}
             >
-              <img src={item.imageURL} alt={item.name}/>
+              <img 
+                src={item?.imageURL || "/img/UnownQuestion.png"} // Provide fallback image URL
+                alt={item?.name + " image"} 
+              />
+
+              {/* Conditionally render the error message if imageURL is missing */}
+              {!item?.imageURL && <p>Can't Find Image</p>}
               <div id='otherPokeInfo'>
-                <p id='pokeID'>{item.id}</p>
+                
                 <div id='nameType'>
-                  <p id='pokeName'>{item.name}</p>
+                  <div className='name-id-container'>
+                    <p id='pokeID'>{item.id}</p>
+                    <p id='pokeName'>{item.name}</p>
+                  </div>
+                  
                   <div id='pokemonTypeContainer'>
                     <div id='typeBox' style={{backgroundColor: typeImg[item.types[0].toLowerCase()]}}/>
                       
@@ -186,18 +200,15 @@ const Home = () => {
                     <p id='pokeTypes'>{item.types.join(", ")}</p>
                     
                   </div>
-                  {/* <button id="readMorePokeMobile" onClick={() => {
-              item.onSelect()
-              navigate('/pokemon/')
-            }}>See More</button> */}
-                  
-                </div>
-                
-              </div>
-              <button id="readMorePoke" onClick={() => {
+                  <button id="readMorePoke" onClick={() => {
               item.onSelect()
               navigate('/pokemon/')
             }}>See More</button>
+                </div>
+                
+                
+              </div>
+              
               
               
             </div>
