@@ -20,7 +20,7 @@ const typeImg = {
   bug: '#3E673C',
   rock: '#AEA898',
   ghost: '#44304B',
-  dragon: '##003D5B',
+  dragon: '#003D5B',
   dark: '#24292E',
   steel: '#7AB4B8',
   fairy: '#E090C1',
@@ -51,9 +51,8 @@ const Home = () => {
   const fetchPokemon = async() => {
     setLoading(true);
     try {
-     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?1000`)  
+     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=500`)  
      const pokemonData = response.data.results   
-     console.log(pokemonData);
 
      //   Get the detailed data using the Pokemon.url
      const detailedPokemonData = await Promise.all(
@@ -202,7 +201,7 @@ const Home = () => {
                   </div>
                   <button id="readMorePoke" onClick={() => {
               item.onSelect()
-              navigate('/pokemon/')
+              navigate(`/pokemon/{id}`)
             }}>See More</button>
                 </div>
                 

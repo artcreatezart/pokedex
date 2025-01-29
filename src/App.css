@@ -17,6 +17,7 @@ body {
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
+    scrollbar-width: none;
 
 }
 
@@ -179,7 +180,7 @@ button {
     
     #pokemonDisplayGrid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
         max-width: 100%;
         padding: 15px;
         gap: 2em;
@@ -336,6 +337,11 @@ button {
     }
 }
 
+#singlePokemomContainer {
+    display: flex;
+    flex-direction: column;
+}
+
 #filterContainer {
     width: 100%;
     display: flex;
@@ -416,6 +422,7 @@ button {
 
     #singlePokemonContainer {
         display: flex;
+        flex-direction: column;
         width: 95%;
         border: 4px solid rgb(19, 18, 27);
         background-color: rgba(11, 11, 16, 0.55);
@@ -572,6 +579,68 @@ button {
     gap: 2rem;
 }
 
+.evolution-chain-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3em;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: capitalize;
+    padding: 20px;
+    background-color: rgba(19, 18, 27, 0.6);
+    border: 3px rgb(19, 18, 27) solid;
+    color: rgba(247, 222, 201, 0.818);
+}
+
+.evolution-chain-container {
+    display: flex;    
+    width: 100%;
+    height: 150px;
+    margin-top: 20px;
+    justify-content: space-between;
+    
+}
+
+.evolution-arrow {
+    margin-left: 3rem;
+}
+
+.evolution-stage {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    
+    
+}
+
+.evolution-stage p{
+    font-size: 0.9rem;
+    opacity: 50%;
+    
+}
+
+.evolution-name-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+}
+
+.evolution-name-img img {
+    object-fit: contain;
+    object-position: center;
+    height: 300px;
+    width: 100px;
+}
+
+.evolution-chain-box p {
+    font-family: "IBM Plex Mono", monospace;
+}
+
 
 
 /* Footer Styling Start */
@@ -593,6 +662,8 @@ footer {
         color: white;
     }
 }
+
+
 
 /* Footer styling end */
 
@@ -641,7 +712,8 @@ footer {
     }
 
     #singlePokemonContainer {
-
+        display: flex;
+        flex-direction: row;
 
         img {
             width: 40%;
