@@ -2,21 +2,23 @@
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 
-## Key Points
+## Description
 In this project, I created a Pokedex website using the PokeApi. The website allows users to:
 
-View a full Pokedex
-Search for specific Pokémon
-Filter by Pokémon type or name
-Clear filters to return to the full list
+👾 View a full Pokedex <br/>
+👾 Search for specific Pokémon <br/>
+👾 Filter by Pokémon type or name <br/>
+👾 Clear filters to return to the full list <br/>
+
 The goal was to learn how to interact with an external API and understand how to manipulate and display data dynamically. The visual design was inspired by Pokémon Legends: Arceus, using its color scheme, fonts, and overall aesthetic for the website's look and feel.
 
-## Description
-In this project, I created a Pokedex website using an external API called PokeApi. The website allows users to view a full Pokedex, search for specific Pokémon, and filter them by type or name. Users can also clear the filters to return to the full list. The main goal of the project was to learn how to work with external APIs and understand their usefulness. 
-As a visual learner, I find it easier to design websites after deciding on a theme or style. For this project, I drew inspiration from the Pokémon Legends: Arceus game, using its color scheme, fonts, and overall design aesthetic for the websites look and feel.
-
-This project focused on working with an API and its functionality, so I didnt spend much time on pre-production tasks. I gathered a few small assets, such as colors, images, and styles inspired by the Pokémon Legends: Arceus game, which helped me establish a design concept. 
-I started by setting up the main files and folder structure, linking everything correctly. I tested in the console and terminal to catch any sneaky errors. After that, I proceeded to call the API and retrieved specific data elements to display on my Pokedex website
-
+## Usage
+#####Current Features:
+🕹️ Search Pokémon by name or type
+🕹️ Filter Pokémon by their types
+🕹️ Responsive design improvements underway
+#####Planned Features:
+🕹️ Add Pronouniations for the pokemon names
+🕹️ Enhance responsiveness for mobile devices
 
 Disclaimer: I am currently working on this project to improve the design and functionailty using new skills have learnt. At this moment i am working on adding new information about individual pokemon aswell as improving the responsivness.
