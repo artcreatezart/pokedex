@@ -2,6 +2,16 @@
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 
+## Key Points
+In this project, I created a Pokedex website using the PokeApi. The website allows users to:
+
+View a full Pokedex
+Search for specific Pokémon
+Filter by Pokémon type or name
+Clear filters to return to the full list
+The goal was to learn how to interact with an external API and understand how to manipulate and display data dynamically. The visual design was inspired by Pokémon Legends: Arceus, using its color scheme, fonts, and overall aesthetic for the website's look and feel.
+
+## Description
 In this project, I created a Pokedex website using an external API called PokeApi. The website allows users to view a full Pokedex, search for specific Pokémon, and filter them by type or name. Users can also clear the filters to return to the full list. The main goal of the project was to learn how to work with external APIs and understand their usefulness. 
 As a visual learner, I find it easier to design websites after deciding on a theme or style. For this project, I drew inspiration from the Pokémon Legends: Arceus game, using its color scheme, fonts, and overall design aesthetic for the websites look and feel.
 
