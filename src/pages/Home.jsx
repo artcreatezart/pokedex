@@ -51,7 +51,7 @@ const Home = () => {
   const fetchPokemon = async() => {
     setLoading(true);
     try {
-     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=151`)  
+     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?1000`)  
      const pokemonData = response.data.results   
      console.log(pokemonData);
 

@@ -33,19 +33,24 @@ body.no-scroll {
     padding: 15px;
     background-color: rgba(11, 11, 16, 0.8);
 
-    #logo,
-    #menu {
-        a {
-            color: aliceblue;
+    
+}
+
+button {
+    cursor: pointer;
+}
+
+#logo,
+    #menu a{
+        color: aliceblue;
             text-decoration: none;
             font-family: "Nanum Brush Script", cursive;
 
-        }
+        
 
-        a:hover {
-            color: #7b3232;
-        }
-
+    }
+    #menu a:hover {
+        color: #7b3232;
     }
 
     #logo {
@@ -53,6 +58,10 @@ body.no-scroll {
         font-weight: 600;
         font-size: 21px;
         text-align: left;
+        
+    }
+    #logo a {
+        font-family: "Nanum Brush Script", cursive;
     }
 
     #menu {
@@ -83,7 +92,6 @@ body.no-scroll {
         }
 
     }
-}
 
 #topnav a {
 
@@ -168,46 +176,7 @@ body.no-scroll {
         font-family: "Nanum Brush Script", cursive;
     }
 
-    #filterContainer {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        /* flex-direction: column; */
-        width: 100%;
-        gap: 50px;
-        margin-bottom: 40px;
-
-        #searchContainer,
-        #typeContainer {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-
-            label {
-                font-size: 1.6em;
-                color: rgb(251, 240, 229);
-                font-family: "IBM Plex Mono", monospace;
-                font-weight: 400;
-                font-style: normal;
-            }
-
-            input,
-            select {
-                font-size: 1.1em;
-                font-family: "IBM Plex Mono", monospace;
-                font-weight: 400;
-                font-style: normal;
-                padding: 5px;
-                background-color: rgba(251, 240, 229, 0.9);
-                border: 2px solid rgb(251, 240, 229);
-                border-radius: 3px;
-            }
-
-        }
-    }
-
+    
     #pokemonDisplayGrid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -226,6 +195,8 @@ body.no-scroll {
             gap: 20px;
             max-width: 100%;
             transition: ease 0.5s;
+            overflow: hidden;
+            cursor: pointer;
 
             img {
                 width: 43%;
@@ -365,6 +336,47 @@ body.no-scroll {
     }
 }
 
+#filterContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 50px;
+    margin-bottom: 40px;
+
+    
+}
+
+#searchContainer,
+    #typeContainer {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        label {
+            font-size: 1.6em;
+            color: rgb(251, 240, 229);
+            font-family: "IBM Plex Mono", monospace;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        input,
+        select {
+            font-size: 1.1em;
+            font-family: "IBM Plex Mono", monospace;
+            font-weight: 400;
+            font-style: normal;
+            padding: 5px;
+            background-color: rgba(251, 240, 229, 0.9);
+            border: 2px solid rgb(251, 240, 229);
+            border-radius: 3px;
+        }
+
+    }
+
 /* Home Styling End */
 
 /* SIngle oage pokemon styling */
@@ -379,12 +391,12 @@ body.no-scroll {
         width: 97%;
         justify-content: space-between;
         padding: 20px;
-        margin-top: 20px;
+        margin-top: 10px;
 
         button {
             font-size: 1.4em;
-            padding: 20px 50px;
-            margin-bottom: 20px;
+            padding: 10px 30px;
+            margin-bottom: 10px;
             border: 4px solid rgb(19, 18, 27);
             background-color: rgba(11, 11, 16, 0.832);
             color: rgb(251, 240, 229);
@@ -427,7 +439,7 @@ body.no-scroll {
                 align-items: center;
                 background-color: rgba(244, 219, 195, 1);
                 padding: 10px 28px;
-                width: 98%;
+                width:100%;
                 font-size: 1.8em;
                 border-radius: 30px;
 
@@ -466,7 +478,7 @@ body.no-scroll {
             }
 
             #singlePokemonMoreInfo {
-                width: 98%;
+                width: 100%;
                 display: flex;
 
                 #singlePokemonTypes {
@@ -533,7 +545,7 @@ body.no-scroll {
             }
 
             #abilityInfo {
-                font-size: 1.8em;
+                font-size: 1.3em;
                 font-family: "IBM Plex Mono", monospace;
                 font-weight: 400;
                 font-style: normal;
@@ -585,7 +597,7 @@ footer {
 /* Footer styling end */
 
 /* Media queries */
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 900px) {
     #menu {
         display: block;
         width: 75%;

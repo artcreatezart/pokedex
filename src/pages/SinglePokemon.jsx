@@ -74,11 +74,9 @@ const SinglePokemon = () => {
 
             <div id='pokeMeasure'>
               <div id='heightMeasure'>
-                <Rulers />
                 <p>Height: {selectedPokemon.height}</p>
               </div>
               <div id='weightMeasure'>
-                <Rulers/>
                 <p>Weight: {selectedPokemon.weight}</p>
               </div>
             </div>
@@ -87,6 +85,10 @@ const SinglePokemon = () => {
           </div>
 
           <p id='abilityInfo'>Ability: {selectedPokemon.ability.join(", ")}</p>
+
+          <div className='evolution-chain-container'>
+            
+          </div>
 
           </div>
           
