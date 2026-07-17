@@ -18,12 +18,6 @@ const Header = () => {
           <Link to='/'>PokeApi</Link>
         </div>
 
-        <ul id='menu'>
-          <li>
-            <Link to='/'>Home</Link>
-          </li>
-        </ul>
-
         {/* Hamburger Icon */}
         <div id='menuContainer'>
           <button id='menuButton' className='show-mobile-menu-button' onClick={toggleMobileMenu}>

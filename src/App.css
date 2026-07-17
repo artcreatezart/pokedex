@@ -337,7 +337,7 @@ button {
     }
 }
 
-#singlePokemomContainer {
+#singlePokemonContainer {
     display: flex;
     flex-direction: column;
 }
@@ -421,8 +421,6 @@ button {
     }
 
     #singlePokemonContainer {
-        display: flex;
-        flex-direction: column;
         width: 95%;
         border: 4px solid rgb(19, 18, 27);
         background-color: rgba(11, 11, 16, 0.55);
@@ -431,6 +429,9 @@ button {
 
         img {
             width: 40%;
+            object-fit: contain;
+            object-position: center;
+            
         }
 
         #singlePokemonInfo {
@@ -716,7 +717,7 @@ footer {
         flex-direction: row;
 
         img {
-            width: 40%;
+            width: 100%;
         }
 
     }
